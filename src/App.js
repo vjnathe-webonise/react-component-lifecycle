@@ -78,9 +78,10 @@ class App extends Component {
 
   render() {
     // executes many time
-    log('papernt render');
+    log('parent render');
     return (
       <div>
+        <h1>Parent Section</h1>
         <h2 style={{'color':`${this.state.color}`}}>Let's see what is happening in the background</h2>
         <button onClick={this._updateMe}>Update Me</button>
         <button onClick={this._forceUpdateMe}>Force Update Me</button>
@@ -101,6 +102,7 @@ class Child extends Component {
     this.state = {
       name: this.props.name
     }
+    log('child constructor');
   }
 
   componentWillMount() {
@@ -147,9 +149,10 @@ class Child extends Component {
   }
 
   render() {
-    log('render child')
+    log('child render')
     return (
       <div>
+       <h1>Child Section</h1>
        <h2>{`props:${this.props.name}`}</h2>
        <h2>{`state:${this.state.name}`}</h2>
         <button onClick={this._updateChild}>Update Child</button>
