@@ -22,38 +22,38 @@ class App extends Component {
     this.state = {
       color: getRandomColor()
     };
-    log('constructor'); 
+    log('parent constructor');
   }
-  
+
   componentWillMount() {
-    // executes once 
-    log('componentWillMount');
+    // executes once
+    log('parent componentWillMount');
   }
-  
+
   componentDidMount() {
     // executes once
-    log('componentDidMount');
+    log('parent componentDidMount');
   }
-  
+
   shouldComponentUpdate() {
     // executes many time but not on component mounting
-    log('shouldComponentUpdate');
+    log('parent shouldComponentUpdate');
     return true;
   }
-  
+
   componentWillUpdate() {
     // executes many time but not on component mounting
-    log('componentWillUpdate');
+    log('parent componentWillUpdate');
   }
-  
+
   componentDidUpdate() {
     // executes many time but not on component mounted
-    log('componentDidUpdate');
+    log('parent componentDidUpdate');
   }
-  
+
   componentWillUnmount() {
     // executes once
-    log('componentWillUnmount');
+    log('parent componentWillUnmount');
   }
 
   _updateMe() {
@@ -61,7 +61,7 @@ class App extends Component {
       color: getRandomColor()
     })
   }
-  
+
   _forceUpdateMe() {
     this.forceUpdate()
   }
@@ -74,11 +74,11 @@ class App extends Component {
     this.setState({
       color: color
     })
-  } 
+  }
 
   render() {
     // executes many time
-    log('render');
+    log('papernt render');
     return (
       <div>
         <h2 style={{'color':`${this.state.color}`}}>Let's see what is happening in the background</h2>
@@ -102,19 +102,50 @@ class Child extends Component {
       name: this.props.name
     }
   }
-  
+
+  componentWillMount() {
+    // executes once
+    log('child componentWillMount');
+  }
+
+  componentDidMount() {
+    // executes once
+    log('child componentDidMount');
+  }
+
+  shouldComponentUpdate() {
+    // executes many time but not on component mounting
+    log('child shouldComponentUpdate');
+    return true;
+  }
+
+  componentWillUpdate() {
+    // executes many time but not on component mounting
+    log('child componentWillUpdate');
+  }
+
+  componentDidUpdate() {
+    // executes many time but not on component mounted
+    log('child componentDidUpdate');
+  }
+
+  componentWillUnmount() {
+    // executes once
+    log('child componentWillUnmount');
+  }
+
   componentWillReceiveProps(newProps) {
     // will call on every parent component update but not on mount
-    log('componentWillReceiveProps')
+    log('child componentWillReceiveProps')
     this.setState({
       name: newProps.name
     })
   }
- 
+
   _updateChild() {
     this.props.changeColor('black')
   }
- 
+
   render() {
     log('render child')
     return (
