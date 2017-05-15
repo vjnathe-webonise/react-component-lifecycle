@@ -82,7 +82,7 @@ class App extends Component {
     return (
       <div>
         <h1>Parent Section</h1>
-        <h2 style={{'color':`${this.state.color}`}}>Let's see what is happening in the background</h2>
+        <h2 style={{'color':`${this.state.color}`}}>Let's see what is happening in the background, observe the browser console</h2>
         <button onClick={this._updateMe}>Update Me</button>
         <button onClick={this._forceUpdateMe}>Force Update Me</button>
         <button onClick={this._unmountMe}>Unmount Me</button>
