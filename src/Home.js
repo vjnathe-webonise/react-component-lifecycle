@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 //import {Link} from 'react-router';
 
 //RR-4 uncomment this
-//import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const inLineStyle = {
 	border: '1px solid black',

@@ -38,16 +38,17 @@ ReactDOM.render(
 // 1) uncomment following to demonstrate React Router-4
 // 2) make changes in Home.js for Link as per version of router
 
-/*import {BrowserRouter} from ‘react-router-dom’
+/*import {BrowserRouter, Route,Switch } from 'react-router-dom'
 
 var routes = (
-    <BrowserRouter history={hashHistory}>
-        <Route path="/" component={Home}>
-            <IndexRoute component={App}/>
-            <Route path="app" component={App}/>
-            <Route path="content" component={Content}/>
-            <Route path="*" component={NotFound}/>
-        </Route>
+    <BrowserRouter>
+        <Home path="/">
+          <Switch>
+            <Route exact path="/" component={App}/>
+            <Route path="/content" component={Content}/>
+            <Route component={NotFound}/>
+          </Switch>
+        </Home>
     </BrowserRouter>
 )
 
